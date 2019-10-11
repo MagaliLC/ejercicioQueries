@@ -4,11 +4,11 @@ SELECT origin, AVG(DepDelay), AVG(ArrDelay)
  FROM flights
  GROUP BY origin;
  
- SELECT colMonth, colYear, origin, AVG(ArrDelay)
+ SELECT origin, colYear, colMonth, AVG(ArrDelay)
  FROM flights
- GROUP BY origin
+ GROUP BY origin, colYear, colMonth
  ORDER BY origin;
- 
+
 SELECT city, colYear, colMonth,  AVG(ArrDelay)
  FROM flights as f
  LEFT JOIN usairports as a
